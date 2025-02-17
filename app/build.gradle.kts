@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.cmormor.proyectofinalmultiverso"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.cmormor.proyectofinalmultiverso"
