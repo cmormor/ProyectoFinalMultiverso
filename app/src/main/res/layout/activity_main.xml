@@ -9,14 +9,15 @@
 
     <ImageView
         android:id="@+id/fondo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="600dp"
+        android:layout_height="1100dp"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.493" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,10 +47,10 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fondo"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:layout_constraintVertical_bias="0.848" />
 
     <Button
         android:id="@+id/btnIrLogin"
@@ -57,13 +58,13 @@
         android:layout_height="48dp"
         android:backgroundTint="#FF00DD"
         android:fontFamily="@font/micro5_regular"
-        android:text="IR A LOGIN"
+        android:text="COMENCEMOS"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.773" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

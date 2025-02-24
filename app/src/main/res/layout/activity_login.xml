@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,29 +10,113 @@
 
     <ImageView
         android:id="@+id/fondo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="600dp"
+        android:layout_height="1100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/fondo_difuminado"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/orbitron_black"
-        android:text="MULTIVERSO ARACNIDO"
+        android:gravity="center"
+        android:text="¡ ACCEDE A TU CUENTA !"
+        android:textAlignment="center"
         android:textColor="#780B6F"
         android:textSize="40sp"
-        android:gravity="center"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.089" />
+
+    <EditText
+        android:id="@+id/etUser"
+        android:layout_width="345dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="324dp"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#E0E0E0"
+        android:fontFamily="@font/anta_regular"
+        android:autofillHints="username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="345dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="76dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#E0E0E0"
+        android:fontFamily="@font/anta_regular"
+        android:autofillHints="password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUser" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/micro5_regular"
+        android:gravity="center"
+        android:text="¿ NO TIENES CUENTA ?"
+        android:textAlignment="center"
+        android:textColor="#780B6F"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:layout_constraintVertical_bias="0.798" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="244dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF00DD"
+        android:fontFamily="@font/micro5_regular"
+        android:text="LOG IN"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/micro5_regular"
+        android:gravity="center"
+        android:text="REGISTRATE"
+        android:textAlignment="center"
+        android:textColor="#780B6F"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:layout_constraintVertical_bias="0.829" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
