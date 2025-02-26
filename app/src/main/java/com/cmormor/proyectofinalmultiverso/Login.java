@@ -6,6 +6,8 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -62,6 +64,10 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        TextView register = findViewById(R.id.textView2);
+        Animation rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rote);
+        register.startAnimation(rotateAnimation);
 
         Log.d("CicloVida", "onCreate: La actividad se creó");
     }

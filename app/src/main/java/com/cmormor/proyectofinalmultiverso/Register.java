@@ -3,6 +3,8 @@ package com.cmormor.proyectofinalmultiverso;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -49,11 +51,16 @@ public class Register extends AppCompatActivity {
                         "Usuario: " + USERNAME + "<br/>" +
                         "Contraseña: " + PASSWORD;
                 tvMensaje.setText(android.text.Html.fromHtml(mensaje));
+
+                Animation fadeIn = AnimationUtils.loadAnimation(Register.this, R.anim.fade_in);
+                tvMensaje.startAnimation(fadeIn);
+                tvMensaje.setVisibility(View.VISIBLE);
+
                 Toast.makeText(Register.this, "Correo enviado", Toast.LENGTH_SHORT).show();
+                btnVolver.startAnimation(fadeIn);
                 btnVolver.setVisibility(View.VISIBLE);
             }
         });
-
 
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override

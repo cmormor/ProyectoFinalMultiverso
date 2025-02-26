@@ -1,10 +1,14 @@
 package com.cmormor.proyectofinalmultiverso;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +18,12 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        View rootView = findViewById(android.R.id.content);
+
+        Animation zoomInUp = AnimationUtils.loadAnimation(this, R.anim.zoom_center_fade);
+        rootView.startAnimation(zoomInUp);
         Button btnIrLogin = findViewById(R.id.btnIrLogin);
+        TextView contact = findViewById(R.id.contact);
 
         btnIrLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +32,13 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        contact.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:622733671"));
+            startActivity(intent);
+        });
+
         Log.d("CicloVida", "onCreate: La actividad se creó");
     }
 
