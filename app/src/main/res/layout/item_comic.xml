@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/comicImagen"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="450dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/spiderman1" />
@@ -29,19 +29,20 @@
             android:id="@+id/comicTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/orbitron_black"
             android:textColor="#E0E0E0"
-            android:textSize="16sp"
-            android:layout_marginStart="40dp"
+            android:textSize="17sp"
+            android:layout_marginStart="55dp"
             android:paddingTop="10dp" />
 
         <TextView
             android:id="@+id/comicPrecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+            android:textSize="35sp"
+            android:fontFamily="@font/micro5_regular"
             android:textColor="#FF00DD"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="55dp"
             android:paddingTop="2dp" />
 
     </LinearLayout>

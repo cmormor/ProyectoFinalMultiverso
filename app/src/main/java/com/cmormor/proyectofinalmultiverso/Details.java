@@ -1,6 +1,6 @@
 package com.cmormor.proyectofinalmultiverso;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,36 +13,43 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Details extends AppCompatActivity {
 
-    private ImageView ivComic;
-    private TextView tvTitle, tvDescription, tvPrice;
-    private Button btnAddToCart;
-
-    @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        ivComic = findViewById(R.id.ivComic);
-        tvTitle = findViewById(R.id.tvTitle);
-        tvDescription = findViewById(R.id.tvDescription);
-        tvPrice = findViewById(R.id.tvPrice);
-        btnAddToCart = findViewById(R.id.btnAddToCart);
+        Intent intent = getIntent();
+        String titulo = intent.getStringExtra("titulo");
+        int imagenResId = intent.getIntExtra("imagenResId", 0);
+        String descripcion = intent.getStringExtra("descripcion");
+        double precio = intent.getDoubleExtra("precio", 0.0);
 
-        Comic comic = (Comic) getIntent().getSerializableExtra("comic");
-        if (comic != null) {
-            ivComic.setImageResource(comic.getImagenResId());
-            tvTitle.setText(comic.getTitulo());
-            tvDescription.setText(comic.getDescripcion());
-            tvPrice.setText(String.format("$%.2f", comic.getPrecio()));
-        }
+        ImageView comicImagen = findViewById(R.id.comicImagen);
+        TextView comicTitulo = findViewById(R.id.comicTitulo);
+        TextView comicDescripcion = findViewById(R.id.comicDescripcion);
+        TextView comicPrecio = findViewById(R.id.comicPrecio);
+        Button btnAgregarCarrito = findViewById(R.id.btnAgregarCarrito);
 
-        btnAddToCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Details.this, "Añadido al carrito", Toast.LENGTH_SHORT).show();
-            }
+        comicImagen.setImageResource(imagenResId);
+        comicTitulo.setText(titulo);
+        comicDescripcion.setText(descripcion);
+        comicPrecio.setText(String.format("%.2f€", precio));
+
+        Button btnVolverHome = findViewById(R.id.btnVolverHome);
+        btnVolverHome.setOnClickListener(v -> {
+            Intent intentHome = new Intent(Details.this, Home.class);
+            intentHome.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intentHome);
         });
+
+        btnAgregarCarrito.setOnClickListener(v -> {
+            ItemCart item = new ItemCart(titulo, precio);
+            Cart.agregarAlCarrito(item);
+            Toast.makeText(Details.this, titulo + " agregado al carrito", Toast.LENGTH_SHORT).show();
+        });
+
+
+
         Log.d("CicloVida", "onCreate: La actividad se creó");
     }
 

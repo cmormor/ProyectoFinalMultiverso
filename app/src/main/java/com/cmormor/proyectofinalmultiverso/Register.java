@@ -34,18 +34,26 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = etEmail.getText().toString().trim();
-                if (!email.isEmpty()) {
-                    String mensaje = "<b>CREDENCIALES</b><br/>" +
-                            "Usuario: " + USERNAME + "<br/>" +
-                            "Contraseña: " + PASSWORD;
-                    tvMensaje.setText(android.text.Html.fromHtml(mensaje));
-                    Toast.makeText(Register.this, "Correo enviado", Toast.LENGTH_SHORT).show();
-                    btnVolver.setVisibility(View.VISIBLE);
-                } else {
+
+                if (email.isEmpty()) {
                     Toast.makeText(Register.this, "Por favor, ingresa un email", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                if (!email.matches("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$")) {
+                    Toast.makeText(Register.this, "Por favor, ingresa un email válido", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String mensaje = "<b>CREDENCIALES</b><br/>" +
+                        "Usuario: " + USERNAME + "<br/>" +
+                        "Contraseña: " + PASSWORD;
+                tvMensaje.setText(android.text.Html.fromHtml(mensaje));
+                Toast.makeText(Register.this, "Correo enviado", Toast.LENGTH_SHORT).show();
+                btnVolver.setVisibility(View.VISIBLE);
             }
         });
+
 
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,7 +1,10 @@
 package com.cmormor.proyectofinalmultiverso;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +17,15 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        TextView cartIcon = findViewById(R.id.cartIcon);
+        cartIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, AddCart.class);
+                startActivity(intent);
+            }
+        });
 
         RecyclerView recyclerView = findViewById(R.id.recyclerViewComics);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -42,6 +54,7 @@ public class Home extends AppCompatActivity {
 
         ComicAdapter adapter = new ComicAdapter(this, listaComics);
         recyclerView.setAdapter(adapter);
+
         Log.d("CicloVida", "onCreate: La actividad se creó");
     }
 

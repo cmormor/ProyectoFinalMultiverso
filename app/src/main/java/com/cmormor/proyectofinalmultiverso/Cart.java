@@ -1,50 +1,28 @@
 package com.cmormor.proyectofinalmultiverso;
 
-import android.os.Bundle;
-import android.util.Log;
+import java.util.ArrayList;
+import java.util.List;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+public class Cart {
+    private static List<ItemCart> items = new ArrayList<>();
 
-public class Cart extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
-        Log.d("CicloVida", "onCreate: La actividad se creó");
+    public static void agregarAlCarrito(ItemCart item) {
+        items.add(item);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("CicloVida", "onStart: La actividad está visible");
+    public static List<ItemCart> obtenerCarrito() {
+        return items;
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("CicloVida", "onResume: La actividad está en primer plano (interactuable)");
+    public static double calcularTotal() {
+        double total = 0.0;
+        for (ItemCart item : items) {
+            total += item.getPrecio();
+        }
+        return total;
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("CicloVida", "onPause: La actividad ya no está en primer plano");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("CicloVida", "onStop: La actividad ya no es visible");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("CicloVida", "onDestroy: La actividad se está destruyendo");
+    public static void vaciarCarrito() {
+        items.clear();
     }
 }

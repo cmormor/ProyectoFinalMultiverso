@@ -35,7 +35,7 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
         Comic comic = listaComics.get(position);
         holder.imagen.setImageResource(comic.getImagenResId());
         holder.titulo.setText(comic.getTitulo());
-        holder.precio.setText(String.format("$%.2f", comic.getPrecio()));
+        holder.precio.setText(String.format("%.2f€", comic.getPrecio()));
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(contexto, Details.class);
