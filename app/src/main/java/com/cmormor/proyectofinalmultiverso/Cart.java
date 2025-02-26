@@ -25,4 +25,9 @@ public class Cart {
     public static void vaciarCarrito() {
         items.clear();
     }
+
+    public static void eliminarItem(ItemCart item) {
+        items.remove(item);
+    }
+
 }

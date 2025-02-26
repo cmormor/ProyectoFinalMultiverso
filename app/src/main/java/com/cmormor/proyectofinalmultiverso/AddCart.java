@@ -59,8 +59,21 @@ public class AddCart extends AppCompatActivity {
             priceView.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
+            TextView removeButton = new TextView(this);
+            removeButton.setText("X");
+            removeButton.setTextSize(20);
+            removeButton.setTextColor(0xFF808080);
+            removeButton.setPadding(20, 5, 10, 5);
+            removeButton.setOnClickListener(v -> {
+                Cart.eliminarItem(item);
+                layoutCarrito.removeView(itemLayout);
+                totalPrecio.setText("TOTAL: " + String.format("%.2f€", Cart.calcularTotal()));
+                btnPagar.setEnabled(!Cart.obtenerCarrito().isEmpty());
+            });
+
             itemLayout.addView(titleView);
             itemLayout.addView(priceView);
+            itemLayout.addView(removeButton);
 
             layoutCarrito.addView(itemLayout);
         }
