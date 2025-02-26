@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="VOLVER"
-        android:backgroundTint="#FF00DD"
+        android:backgroundTint="#7C7C7C"
         android:textColor="#FFFFFF"
         android:fontFamily="@font/micro5_regular"
         android:textSize="20sp"
