@@ -36,39 +36,41 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.089" />
 
-    <TextView
-        android:id="@+id/mensajeConfirmacion"
+    <FrameLayout
+        android:id="@+id/frameMensajes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/anta_regular"
-        android:gravity="center"
-        android:text="¡ COMPRA CONFIRMADA !"
-        android:textColor="#FF00DD"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.909">
 
-    <TextView
-        android:id="@+id/mensajeConfirmacion2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/micro5_regular"
-        android:gravity="center"
-        android:text="SU VIAJE POR EL MULTIVERSO COMIENZA"
-        android:textColor="#780B6F"
-        android:textSize="27sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/mensajeConfirmacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/anta_regular"
+            android:gravity="center"
+            android:text="¡ COMPRA CONFIRMADA !"
+            android:textColor="#FF00DD"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mensajeConfirmacion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/micro5_regular"
+            android:gravity="center"
+            android:text="SU VIAJE POR EL MULTIVERSO COMIENZA"
+            android:textColor="#780B6F"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
